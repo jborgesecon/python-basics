@@ -130,7 +130,7 @@ ep_18 = {
 }
 
 ep_19 = {
-    'generic': generic_print
+    'Grades 2 (e90)': grades_2,
 }
 
 ep_20 = {

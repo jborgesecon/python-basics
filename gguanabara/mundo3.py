@@ -505,3 +505,24 @@ def grades():
 # # Episode 19
 
 # e90
+def grades_2():
+    fake = Faker(locale='pt-br')
+    class_1 = dict()
+
+    length = dv.intValid(input('How many students in this class -> '))
+    for i in range(length):
+        name = fake.first_name()
+        grade = dv.floatValid(input(f'Type the grade for {name}: '))
+        class_1[name] = {
+            'grade': grade,
+            'status': 'PASSED' if grade >= 7 else 'FAILED'
+        }
+
+    print('\n')
+    for ii in class_1:
+        print(ii)
+        for iii in class_1[ii]:
+            print(f'    {iii}: {class_1[ii][iii]}')
+        print('\n')
+
+    return
