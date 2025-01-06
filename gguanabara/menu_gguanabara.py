@@ -1,4 +1,4 @@
-from mundo3 import *
+from gguanabara.mundo3 import *
 
 
 # Defining main menu:

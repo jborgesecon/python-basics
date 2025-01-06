@@ -1,5 +1,6 @@
-import dataValid as dv
+import gguanabara.dataValid as dv
 import pandas as pd
+import numpy as np
 import random as rd
 from faker import Faker
 import time
@@ -456,5 +457,51 @@ def lottery_games():
 
 # e89
 def grades():
+    fake = Faker(locale="pt-br")
+    class_1 = []
+
+    # generating list of students
+    for i in range(8):
+        student = []
+        grades = []
+        for ii in range(2):
+            value = round(rd.normalvariate(6.8, 1.4), 2)
+            grades.append(value)
+
+        student.append(fake.first_name())
+        student.append(grades)
+        class_1.append(student)
+
+    names = []
+    for iii in class_1:
+        names.append(iii[0])
+        print(f'{iii[0]} -> {np.average(iii[1]):.2f}')
+
+    print('\n')
+    while True:
+        try:
+            student_name = str(input('Type the student name -> '))
+            if student_name.title() in names:
+                break
+            else:
+                print(f'Student name not listed. choose one from {names}')
+        except Exception as e:
+            print(f'Type a valid answer: {e}')
     
+    student_name.title()
+
+    # helper function
+    def find_name_index(name, lst):
+        for index, sublist in enumerate(lst):
+            if sublist[0] == name:
+                return index
+        return -1
+    
+    chosen_grades = class_1[find_name_index(student_name, class_1)][1]
+    print(f'The grades of {student_name} were: {chosen_grades}')
+
     return
+
+# # Episode 19
+
+# e90
