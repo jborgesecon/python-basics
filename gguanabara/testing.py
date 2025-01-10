@@ -1,23 +1,25 @@
+import random as rd
 from faker import Faker
 
 
-fake = Faker(locale="pt-br")
+# 4 players
+# dice
+# store player, value in dict
+# sort dict
+# print Champion (highest dice value)
 
-class_1 = dict()
+fake = Faker(locale='pt-br')
+players = dict()
+for i in range(4):
+    new_player = fake.first_name()
+    players[new_player] = rd.randint(1,6)
 
-prompt = int(input('type the amount you want: '))
-for i in range(prompt):
-    name = fake.first_name()
-    grade = float(input(f'type the average for {name}: '))
-    class_1[name] = {
-        'grade': grade,
-        'status': 'PASSED' if grade >= 7 else 'FAILED'
-    }
+for ii in players:
+    print(ii, players[ii])
+
 
 print('\n')
-for ii in class_1:
-    print(ii)
-    for iii in class_1[ii]:
-        print(f'    {iii}: {class_1[ii][iii]}')
-    
-    print('\n')
+players = dict(sorted(players.items(), key=lambda x: x[1], reverse=True))
+for k, v in players.items():
+    print(k, ' -> ', v)
+

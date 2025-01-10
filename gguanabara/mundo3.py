@@ -31,7 +31,7 @@ def number_names():
 
 # e73
 def standings():
-    csv = 'datasets_copy/Standings.csv'
+    csv = 'gguanabara/datasets/Standings.csv'
     df = pd.read_csv(csv)
     
     dv.sepper('Top 5:', ' ')
@@ -475,7 +475,7 @@ def grades():
     names = []
     for iii in class_1:
         names.append(iii[0])
-        print(f'{iii[0]} -> {np.average(iii[1]):.2f}')
+        print(f'{iii[0]} -> {np.average(iii[1]):.2f}')#  {iii[1]}')     # for some reason, when I don't print both grades, np.average() return a wrong value
 
     print('\n')
     while True:
@@ -526,3 +526,24 @@ def grades_2():
         print('\n')
 
     return
+
+
+# e91
+def dice():
+    fake = Faker(locale='pt-br')
+    players = {}
+    for i in range(4):
+        new_player = fake.first_name()
+        players[new_player] = rd.randint(1, 6)
+
+    for ii in players:
+        print(ii, ': ', players[ii])
+
+    print('\n')
+    players = dict(sorted(players.items(), key=lambda x: x[1], reverse=True))
+    print('\n')
+
+    o = i
+    for k, v in players.items():
+        print(f'{o}° is {k} with {v}')
+        o += 1

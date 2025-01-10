@@ -131,6 +131,7 @@ ep_18 = {
 
 ep_19 = {
     'Grades 2 (e90)': grades_2,
+    'Dices (e91)': dice
 }
 
 ep_20 = {
