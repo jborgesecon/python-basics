@@ -1,0 +1,1 @@
+select * from services.quantitativo_controladoria_2 limit 10;

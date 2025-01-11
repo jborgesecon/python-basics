@@ -546,4 +546,8 @@ def dice():
     o = i
     for k, v in players.items():
         print(f'{o}° is {k} with {v}')
+        time.sleep(1)
         o += 1
+
+
+# e92
