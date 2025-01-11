@@ -543,7 +543,7 @@ def dice():
     players = dict(sorted(players.items(), key=lambda x: x[1], reverse=True))
     print('\n')
 
-    o = i
+    o = 1
     for k, v in players.items():
         print(f'{o}° is {k} with {v}')
         time.sleep(1)
