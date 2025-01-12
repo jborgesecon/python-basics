@@ -131,7 +131,8 @@ ep_18 = {
 
 ep_19 = {
     'Grades 2 (e90)': grades_2,
-    'Dices (e91)': dice
+    'Dices (e91)': dice,
+    'Retirement Time (e92)': retirement_time
 }
 
 ep_20 = {
